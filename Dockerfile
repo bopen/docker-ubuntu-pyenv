@@ -27,6 +27,6 @@ RUN git clone -b $PYENV_VERSION_TAG --single-branch --depth 1 https://github.com
 COPY python-versions.txt /
 
 RUN xargs -P 4 -n 1 pyenv install < /python-versions.txt \
-    && pyenv global $(pyenv versions --bare)
+    && pyenv global $(cat /python-versions.txt)
 
 VOLUME /src
