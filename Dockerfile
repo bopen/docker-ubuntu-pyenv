@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER Alessandro Amici <a.amici@bopen.eu>
 
-ENV PYENV_VERSION_TAG="v1.1.5" \
+ENV PYENV_VERSION_TAG="v1.2.0" \
     PYENV_ROOT="/opt/pyenv" \
     PATH="/opt/pyenv/bin:/opt/pyenv/shims:$PATH"
 
