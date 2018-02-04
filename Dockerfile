@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN git clone -b $PYENV_VERSION_TAG --single-branch --depth 1 https://github.com/pyenv/pyenv.git $PYENV_ROOT \
     && for version in $PYTHON_VERSIONS; do pyenv install $version; done \
-    && pyenv global $PYTHON_VERSIONS
+ && pyenv global $PYTHON_VERSIONS
 
 VOLUME /src
 WORKDIR /src
