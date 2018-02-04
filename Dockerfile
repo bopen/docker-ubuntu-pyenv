@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 MAINTAINER Alessandro Amici <a.amici@bopen.eu>
 
 ARG PYTHON_VERSIONS="3.6.4 3.5.4 3.4.7 pypy3.5-5.10.0 2.7.14 pypy2.7-5.10.0"
+ARG DEBIAN_FRONTEND="noninteractive"
 
 ENV PYENV_VERSION_TAG="v1.2.1" \
     PYENV_ROOT="/opt/pyenv" \
