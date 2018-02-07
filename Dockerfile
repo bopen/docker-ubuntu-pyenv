@@ -36,6 +36,8 @@ RUN git clone -b $PYENV_VERSION_TAG --single-branch --depth 1 https://github.com
     && pyenv global $PYTHON_VERSIONS \
     && pip install $COMMON_SETUP_DEPENDENCIES \
     && pip install $COMMON_TEST_DEPENDENCIES \
+    && find $PYENV_ROOT/versions -type d '(' -name '__pycache__' -o -name 'test' -o -name 'tests' ')' -exec rm -rfv '{}' + \
+    && find $PYENV_ROOT/versions -type f '(' -name '*.py[co]' -o -name '*.exe' ')' -exec rm -fv '{}' + \
  && rm -rf /tmp/*
 
 VOLUME /src
