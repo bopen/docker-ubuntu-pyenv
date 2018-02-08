@@ -9,7 +9,9 @@ ARG COMMON_SETUP_DEPENDENCIES="cython==0.27.3 numpy==1.14.0 pytest-runner==3.0"
 ARG COMMON_TEST_DEPENDENCIES="detox==0.11 tox==2.9.1 tox-pyenv==1.1.0"
 
 ENV PYENV_ROOT="/opt/pyenv" \
-    PATH="/opt/pyenv/bin:/opt/pyenv/shims:$PATH"
+    PATH="/opt/pyenv/bin:/opt/pyenv/shims:$PATH" \
+    LC_ALL=C.UTF-8 \
+    LANG=C.UTF-8
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -39,6 +41,3 @@ RUN git clone -b $PYENV_VERSION_TAG --single-branch --depth 1 https://github.com
     && find $PYENV_ROOT/versions -type d '(' -name '__pycache__' -o -name 'test' -o -name 'tests' ')' -exec rm -rfv '{}' + \
     && find $PYENV_ROOT/versions -type f '(' -name '*.pyo' -o -name '*.exe' ')' -exec rm -fv '{}' + \
  && rm -rf /tmp/*
-
-VOLUME /src
-WORKDIR /src
