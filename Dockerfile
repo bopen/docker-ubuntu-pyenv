@@ -38,6 +38,6 @@ RUN git clone -b `cat /pyenv-version.txt` --single-branch --depth 1 https://gith
     && pip install -r /requirements-setup.txt \
     && pip install -r /requirements-pytest.txt \
     && pip install -r /requirements-tox.txt \
-    && find $PYENV_ROOT/versions -type d '(' -name '__pycache__' -o -name 'test' -o -name 'tests' ')' -exec rm -rfv '{}' + \
-    && find $PYENV_ROOT/versions -type f '(' -name '*.pyo' -o -name '*.exe' ')' -exec rm -fv '{}' + \
+    && find $PYENV_ROOT/versions -type d '(' -name '__pycache__' -o -name 'test' -o -name 'tests' ')' -exec rm -rf '{}' + \
+    && find $PYENV_ROOT/versions -type f '(' -name '*.pyo' -o -name '*.exe' ')' -exec rm -f '{}' + \
  && rm -rf /tmp/*
