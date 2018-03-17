@@ -2,16 +2,16 @@ FROM ubuntu:16.04
 
 MAINTAINER Alessandro Amici <a.amici@bopen.eu>
 
-ARG PYENV_VERSION_TAG="v1.2.1"
-ARG PYTHON_VERSIONS="3.6.4 3.5.4 3.4.7 pypy3.5-5.10.0 2.7.14 pypy2.7-5.10.0"
-ARG DEBIAN_FRONTEND=noninteractive
-ARG COMMON_SETUP_DEPENDENCIES="cython==0.27.3 numpy==1.14.0 pytest-runner==3.0"
-ARG COMMON_TEST_DEPENDENCIES="detox==0.11 tox==2.9.1 tox-pyenv==1.1.0"
+ARG PYENV_VERSION_TAG="v1.2.2"
+ARG PYTHON_VERSIONS="3.6.4 3.5.5 3.4.8 pypy3.5-5.10.1 2.7.14 pypy2.7-5.10.0"
+ARG DEBIAN_FRONTEND="noninteractive"
+ARG COMMON_SETUP_DEPENDENCIES="cython==0.28 numpy==1.14.2 pip==9.0.2 pytest-runner==4.0 setuptools==38.6.0"
+ARG COMMON_TEST_DEPENDENCIES="detox==0.11 pytest==3.4.2 pytest-flakes==2.0.0 tox==2.9.1 tox-pyenv==1.1.0"
 
 ENV PYENV_ROOT="/opt/pyenv" \
     PATH="/opt/pyenv/bin:/opt/pyenv/shims:$PATH" \
-    LC_ALL=C.UTF-8 \
-    LANG=C.UTF-8
+    LC_ALL="C.UTF-8" \
+    LANG="C.UTF-8"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
