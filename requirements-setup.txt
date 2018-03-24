@@ -8,5 +8,5 @@ cython==0.28
 numpy==1.14.2
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==9.0.2
+pip==9.0.3
 setuptools==38.6.1
