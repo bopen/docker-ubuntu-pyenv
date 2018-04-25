@@ -4,9 +4,9 @@
 #
 #    pip-compile --output-file requirements-setup.txt requirements-setup.in
 #
-cython==0.28
+cython==0.28.2
 numpy==1.14.2
 
 # The following packages are considered to be unsafe in a requirements file:
-pip==9.0.3
-setuptools==38.6.1
+pip==10.0.1
+setuptools==39.0.1
