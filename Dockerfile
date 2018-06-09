@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 MAINTAINER Alessandro Amici <a.amici@bopen.eu>
 
@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libncursesw5-dev \
         libreadline-dev \
         libsqlite3-dev \
-        libssl1.0-dev \
-        # libssl-dev \
+        # libssl1.0-dev \
+        libssl-dev \
         llvm \
         make \
         netbase \
