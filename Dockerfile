@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER Alessandro Amici <a.amici@bopen.eu>
 
@@ -10,23 +10,25 @@ ENV PYENV_ROOT="/opt/pyenv" \
     LANG="C.UTF-8"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    ca-certificates \
-    curl \
-    git \
-    libbz2-dev \
-    libncurses5-dev \
-    libncursesw5-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    libssl-dev \
-    llvm \
-    make \
-    netbase \
-    pkg-config \
-    wget \
-    xz-utils \
-    zlib1g-dev \
+        build-essential \
+        ca-certificates \
+        curl \
+        git \
+        libbz2-dev \
+        libncurses5-dev \
+        libncursesw5-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        libssl1.0-dev \
+        # libssl-dev \
+        llvm \
+        make \
+        netbase \
+        pkg-config \
+        tk-dev \
+        wget \
+        xz-utils \
+        zlib1g-dev \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY pyenv-version.txt python-versions.txt /

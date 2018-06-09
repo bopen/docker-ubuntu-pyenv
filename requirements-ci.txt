@@ -6,13 +6,13 @@
 #
 click==6.7                # via pip-tools
 detox==0.12
-eventlet==0.22.1          # via detox
+eventlet==0.23.0          # via detox
 first==2.0.1              # via pip-tools
 greenlet==0.4.13          # via eventlet
-pip-tools==2.0.1
+pip-tools==2.0.2
 pluggy==0.6.0             # via tox
 py==1.5.3                 # via detox, tox
 six==1.11.0               # via pip-tools, tox
 tox-pyenv==1.1.0
 tox==3.0.0
-virtualenv==15.2.0        # via tox
+virtualenv==16.0.0        # via tox
