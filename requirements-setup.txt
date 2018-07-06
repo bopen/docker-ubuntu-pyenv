@@ -5,7 +5,7 @@
 #    pip-compile --output-file requirements-setup.txt requirements-setup.in
 #
 cython==0.28.3
-numpy==1.14.4
+numpy==1.14.5
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==10.0.1
