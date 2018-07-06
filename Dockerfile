@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         curl \
         git \
         libbz2-dev \
+        libffi-dev \
         libncurses5-dev \
         libncursesw5-dev \
         libreadline-dev \
