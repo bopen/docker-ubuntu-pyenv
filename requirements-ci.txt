@@ -4,15 +4,18 @@
 #
 #    pip-compile --output-file requirements-ci.txt requirements-ci.in
 #
-click==6.7                # via pip-tools
-detox==0.12
-eventlet==0.23.0          # via detox
-first==2.0.1              # via pip-tools
-greenlet==0.4.13          # via eventlet
-pip-tools==2.0.2
-pluggy==0.6.0             # via tox
-py==1.5.4                 # via detox, tox
-six==1.11.0               # via pip-tools, tox
+click==7.0                # via pip-tools
+detox==0.19
+dnspython==1.16.0         # via eventlet
+eventlet==0.24.1          # via detox
+filelock==3.0.10          # via tox
+greenlet==0.4.15          # via eventlet
+monotonic==1.5            # via eventlet
+pip-tools==3.3.2
+pluggy==0.8.1             # via tox
+py==1.7.0                 # via detox, tox
+six==1.12.0               # via eventlet, pip-tools, tox
+toml==0.10.0              # via tox
 tox-pyenv==1.1.0
-tox==3.0.0
-virtualenv==16.0.0        # via tox
+tox==3.6.1
+virtualenv==16.3.0        # via tox
