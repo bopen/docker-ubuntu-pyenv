@@ -4,10 +4,12 @@ MAINTAINER Alessandro Amici <a.amici@bopen.eu>
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
-ENV PYENV_ROOT="/opt/pyenv" \
-    PATH="/opt/pyenv/bin:$PATH" \
+# set the variables as per $(pyenv init -)
+ENV LANG="C.UTF-8" \
     LC_ALL="C.UTF-8" \
-    LANG="C.UTF-8"
+    PATH="/opt/pyenv/shims:/opt/pyenv/bin:$PATH" \
+    PYENV_ROOT="/opt/pyenv" \
+    PYENV_SHELL="bash"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
@@ -39,12 +41,10 @@ RUN git clone -b `cat /pyenv-version.txt` --single-branch --depth 1 https://gith
     && pyenv global `cat /python-versions.txt` \
     && find $PYENV_ROOT/versions -type d '(' -name '__pycache__' -o -name 'test' -o -name 'tests' ')' -exec rm -rf '{}' + \
     && find $PYENV_ROOT/versions -type f '(' -name '*.pyo' -o -name '*.exe' ')' -exec rm -f '{}' + \
-    && echo 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc \
  && rm -rf /tmp/*
 
 COPY requirements-setup.txt requirements-test.txt requirements-ci.txt /
-RUN eval "$(pyenv init -)" \
-    && pip install -r /requirements-setup.txt \
+RUN pip install -r /requirements-setup.txt \
     && pip install -r /requirements-test.txt \
     && pip install -r /requirements-ci.txt \
     && find $PYENV_ROOT/versions -type d '(' -name '__pycache__' -o -name 'test' -o -name 'tests' ')' -exec rm -rf '{}' + \
