@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libreadline-dev \
         libsqlite3-dev \
         libssl1.0-dev \
+        liblzma-dev \
         # libssl-dev \
         llvm \
         make \
